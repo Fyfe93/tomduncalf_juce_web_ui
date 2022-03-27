@@ -2,15 +2,25 @@ namespace tomduncalf
 {
 namespace BrowserIntegration
 {
-    BrowserComponent::BrowserComponent(): juce::WindowsWebView2WebBrowserComponent (false)
+BrowserComponent::BrowserComponent(): juce::WindowsWebView2WebBrowserComponent (false, juce::WebView2Preferences())
     {
         loadUI();
     }
 
-    BrowserComponent::BrowserComponent (juce::String initialUrl): juce::WindowsWebView2WebBrowserComponent (false)
+//BrowserComponent::BrowserComponent(): juce::WindowsWebView2WebBrowserComponent (false)
+//{
+//    loadUI();
+//}
+
+BrowserComponent::BrowserComponent (juce::String initialUrl): juce::WindowsWebView2WebBrowserComponent (false, juce::WebView2Preferences())
     {
         goToURL (initialUrl);
     }
+
+//BrowserComponent::BrowserComponent (juce::String initialUrl): juce::WindowsWebView2WebBrowserComponent (false)
+//{
+//    goToURL (initialUrl);
+//}
 
     void BrowserComponent::loadUI()
     {
